@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html>
+  <head>
+  <title>Redirect</title>
+  </head>
   <script>
     function openPage() {
       var url = "Pages/Home.html"
@@ -15,15 +18,6 @@
       iframe.src = url;
       win.document.body.appendChild(iframe);
       window.open('', '_self', '').close();
-      historyflood();
-    }
-    function historyflood() {
-      function () {
-        !function () {
-          for (var t = "/", o = 0; o < 50; o++)
-          history.pushState(0, 0, t += o.toString())
-        }
-      }
     }
   </script>
   <body onload="openPage()">
