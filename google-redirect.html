@@ -17,9 +17,8 @@
       iframe.style.margin = "0";
       iframe.src = url;
       win.document.body.appendChild(iframe);
-      window.open('', '_parent', '').close();
-      close();
     }
+    window.addEventListener('load', function () {close();})
   </script>
   <body onload="openPage()">
   </body>
