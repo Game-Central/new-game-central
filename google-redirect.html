@@ -18,6 +18,7 @@
       iframe.src = url;
       win.document.body.appendChild(iframe);
       window.open('', '_self', '').close();
+      location.href = "javascript:close_window();";
     }
   </script>
   <body onload="openPage()">
