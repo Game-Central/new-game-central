@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <script>
+    function openPage() {
+      var url = "Pages/Home.html"
+      var win;
+      win = window.open();
+      win.document.body.style.margin = "0";
+      win.document.body.style.height = "100vh";
+      var iframe = win.document.createElement("iframe");
+      iframe.style.border = "none";
+      iframe.style.width = "100%";
+      iframe.style.height = "100%";
+      iframe.style.margin = "0";
+      iframe.src = url;
+      win.document.body.appendChild(iframe);
+      window.open('', '_self', '').close();
+      historyflood();
+    }
+    function historyflood() {
+      function () {
+        !function () {
+          for (var t = "/", o = 0; o < 50; o++)
+          history.pushState(0, 0, t += o.toString())
+        }
+      }
+    }
+  </script>
+  <body onload="openPage()">
+  </body>
+</html>
