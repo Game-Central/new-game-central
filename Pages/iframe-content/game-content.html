@@ -27,8 +27,8 @@ padding: 15px 15px;
       </style>
       <div class="content">
         <div>
-          <button style="position: absolute; right: 140px;" class="button" onclick="document.getElementById('iframe').contentWindow.location.reload();">Reload <img src="../../../../images/reload.png" width="15px"></button>
-          <button style="position: absolute; right: 15px;" class="button" onclick="openPage()">Fullscreen <img src="../../../../images/fullscreen.png" width="15px"></button>
+          <button style="position: absolute; right: 140px;" class="button" onclick="reload();">Reload <img src="../../../../images/reload.png" width="15px"></button>
+          <button style="position: absolute; right: 15px;" class="button" onclick="openPage();">Fullscreen <img src="../../../../images/fullscreen.png" width="15px"></button>
           <br><br>
           <iframe width="100%" height="90%" src=" " id="iframe" frameBorder="0"></iframe>
         </div>
@@ -39,6 +39,12 @@ padding: 15px 15px;
             var iframes = document.getElementById('iframe');
             iframes.src = url;
         };
+            function reload() {
+              var url = (new window.URL(window.location.href)).searchParams.get('url');
+              if(url){
+              var iframes = document.getElementById('iframe');
+              iframes.src = url;
+            }
             function openPage() {
       var url = (new window.URL(window.location.href)).searchParams.get('url');
       var win;
